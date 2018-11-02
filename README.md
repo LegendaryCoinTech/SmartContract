@@ -65,7 +65,7 @@ contract ERC20 is ERC20Basic {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-contract Legendary is ERC20 {
+contract GEND is ERC20 {
     
     using SafeMath for uint256;
     address owner = msg.sender;
@@ -73,14 +73,14 @@ contract Legendary is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = "Legendary Coin";
+    string public constant name = "GEND Token";
     string public constant symbol = "GEND";
     uint public constant decimals = 8;
     
-    uint256 public totalSupply = 10000000000e8;
+    uint256 public totalSupply = 200000000000e8;
     uint256 public totalDistributed = 0;    
     uint256 public constant MIN_CONTRIBUTION = 1 ether / 100000; // 0.00001 Ether
-    uint256 public tokensPerEth = 10000000e8;
+    uint256 public tokensPerEth = 100000000e8;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
@@ -107,7 +107,7 @@ contract Legendary is ERC20 {
     }
     
     
-    function Legendary () public {
+    function GEND () public {
         owner = msg.sender;    
         distr(owner, totalDistributed);
     }
